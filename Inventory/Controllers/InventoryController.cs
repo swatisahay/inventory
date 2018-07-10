@@ -29,6 +29,20 @@ namespace Inventory.Controllers
       List<Item> allItems = Item.GetAll();
       return View("Index", allItems);
     }
+    [HttpGet("/items/find")]
+    public ActionResult Find()
+    {
+      return View();
+    }
+    [HttpPost("/items/found")]
+    public ActionResult Found()
+    {
+      Item newItem = new Item("","",0);
+
+      newItem = Item.Find(int.Parse(Request.Form["newid"]));
+
+      return View(newItem);
+    }
     // [HttpPost("/items/delete")]
     // public ActionResult DeleteAll()
     // {
