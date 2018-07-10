@@ -7,10 +7,12 @@
     <th>Type</th>
     <th>Number</th>
   </tr>
-  foreach(var item in Models)
+  @foreach(var item in Model)
   {
+  <tr>
     <td>@item.GetName()</td>
     <td>@item.GetPokemonType()</td>
     <td>@item.GetNumber()</td>
+  </tr>
   }
 </table>

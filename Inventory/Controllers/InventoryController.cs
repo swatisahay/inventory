@@ -23,7 +23,8 @@ namespace Inventory.Controllers
     [HttpPost("/items")]
     public ActionResult Create()
     {
-      Item newItem = new Item (Request.Form["new-name"], Request.Form["new-ptype"], int.Parse(Request.Form["new-number"]));
+      Item newItem = new Item (Request.Form["newname"], Request.Form["newptype"], int.Parse(Request.Form["newnumber"]));
+      // Item newItem = new Item ("Charizard", "Fire", 6);
       newItem.Save();
       List<Item> allItems = Item.GetAll();
       return View("Index", allItems);
