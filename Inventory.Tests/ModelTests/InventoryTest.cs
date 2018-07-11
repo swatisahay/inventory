@@ -20,7 +20,7 @@ namespace Inventory.Tests
     public void Save_SavesToDatabase_ItemList()
     {
       //Arrange
-      Item testItem = new Item("Pikachu", "Electric", 1);
+      Item testItem = new Item("Pikachu", "Electric", 1, 1);
 
       //Act
       testItem.Save();
@@ -34,7 +34,7 @@ namespace Inventory.Tests
     public void Save_AssignsIdToObject_Id()
     {
       //Arrange
-      Item testItem = new Item("Charizard", "Fire", 6);
+      Item testItem = new Item("Charizard", "Fire", 6,1);
 
       //Act
       testItem.Save();
@@ -51,7 +51,7 @@ namespace Inventory.Tests
     public void Find_FindsItemInDatabase_Item()
     {
       //Arrange
-      Item testItem = new Item("Electrode", "Electric", 101);
+      Item testItem = new Item("Electrode", "Electric", 101, 1);
       testItem.Save();
 
       //Act
@@ -59,6 +59,23 @@ namespace Inventory.Tests
 
       //Assert
       Assert.AreEqual(testItem, foundItem);
+    }
+    [TestMethod]
+    public void Edit_UpdatesItemInDatabase_String()
+    {
+      //Arrange
+      // string testString1 = "test1";
+      Item testItem = new Item("testString1", "Electric", 101, 1);
+      testItem.Save();
+      Item testItem2 = new Item("testString2", "Electrode", 101, 2);
+
+      //Act
+      testItem.Edit("testString2", "Electrode", 101, 2);
+
+      Item result = Item.Find(testItem.GetId());
+
+      //Assert
+      Assert.AreEqual(testItem2, result);
     }
   }
 }

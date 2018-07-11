@@ -9,12 +9,16 @@ namespace Inventory.Models
     private string _pokemonType;
     private int _number;
     private int _id;
-    public Item(string Name, string PokemonType, int Number, int Id = 0)
+    private int _descriptionId;
+
+    public Item(string Name, string PokemonType, int Number, int descriptionId, int Id = 0)
     {
       _name = Name;
       _pokemonType = PokemonType;
       _number = Number;
+      _descriptionId = descriptionId;
       _id = Id;
+
     }
     public string GetName()
     {
@@ -44,6 +48,11 @@ namespace Inventory.Models
     {
       return _id;
     }
+    public int GetdescriptionId()
+    {
+      return _descriptionId;
+    }
+
     public static List<Item> GetAll()
     {
       // return _instances;
@@ -59,7 +68,9 @@ namespace Inventory.Models
         string itemName = rdr.GetString(1);
         string itemPokemonType = rdr.GetString(2);
         int itemNumber = rdr.GetInt32(3);
-        Item newItem = new Item(itemName, itemPokemonType, itemNumber, itemId);
+        int descriptionNumber = rdr.GetInt32(4);
+
+        Item newItem = new Item(itemName, itemPokemonType, itemNumber, descriptionNumber, itemId);
         allItems.Add(newItem);
       }
       conn.Close();
@@ -82,7 +93,8 @@ namespace Inventory.Models
         bool nameEquality = (this.GetName() == newItem.GetName());
         bool pokemonTypeEquality = (this.GetPokemonType() == newItem.GetPokemonType());
         bool numberEquality = (this.GetNumber() == newItem.GetNumber());
-        return (idEquality && nameEquality && pokemonTypeEquality && numberEquality);
+        bool descriptionIdEquality = this.GetdescriptionId() == newItem.GetdescriptionId();
+        return (idEquality && nameEquality && pokemonTypeEquality && numberEquality && descriptionIdEquality);
       }
     }
     public static void DeleteAll()
@@ -107,15 +119,13 @@ namespace Inventory.Models
       conn.Open();
 
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"INSERT INTO items (Name, PokemonType, Number) VALUES (@ItemName, @ItemPokemonType, @ItemNumber);";
-
+      cmd.CommandText = @"INSERT INTO items (Name, PokemonType, Number, descriptionId) VALUES (@ItemName, @ItemPokemonType, @ItemNumber, @ItemDescriptionId);";
 
       cmd.Parameters.Add(new MySqlParameter("@ItemName", _name));
       cmd.Parameters.Add(new MySqlParameter("@ItemPokemonType", _pokemonType));
       cmd.Parameters.Add(new MySqlParameter("@ItemNumber", _number));
+      cmd.Parameters.Add(new MySqlParameter("@ItemDescriptionId", _descriptionId));
 
-
-      //
       // MySqlParameter PokemonType = new MySqlParameter();
       // PokemonType.ParameterName = "@ItemPokemonType";
       // PokemonType.Value = this._pokemonType;
@@ -150,6 +160,7 @@ namespace Inventory.Models
         string itemName = "";
         string itemPokemonType = "";
         int itemNumber = 0;
+        int ItemDescriptionId = 0;
 
         while (rdr.Read())
         {
@@ -157,8 +168,9 @@ namespace Inventory.Models
           itemName = rdr.GetString(1);
           itemPokemonType = rdr.GetString(2);
           itemNumber = rdr.GetInt32(3);
+          ItemDescriptionId = rdr.GetInt32(4);
         }
-        Item foundItem = new Item(itemName, itemPokemonType, itemNumber, itemId);
+        Item foundItem = new Item(itemName, itemPokemonType, itemNumber, ItemDescriptionId, itemId);
 
       conn.Close();
       if (conn != null)
@@ -167,12 +179,12 @@ namespace Inventory.Models
       }
       return foundItem;
    }
-   public void Edit(string newName, string newPokemonType, int newNumber)
+   public void Edit(string newName, string newPokemonType, int newNumber, int newDescriptionId)
    {
        MySqlConnection conn = DB.Connection();
        conn.Open();
        var cmd = conn.CreateCommand() as MySqlCommand;
-       cmd.CommandText = @"UPDATE items SET name =@newName, pokemontype= @newPokemonType, number=@newNumber WHERE id = @searchId;";
+       cmd.CommandText = @"UPDATE items SET name =@newName, pokemontype= @newPokemonType, number=@newNumber,  descriptionId=@newDescriptionId WHERE id = @searchId;";
 
        MySqlParameter searchId = new MySqlParameter();
        searchId.ParameterName = "@searchId";
@@ -194,10 +206,16 @@ namespace Inventory.Models
        number.Value = newNumber;
        cmd.Parameters.Add(number);
 
+       MySqlParameter descriptionId = new MySqlParameter();
+       descriptionId.ParameterName = "@newDescriptionId";
+       descriptionId.Value = newDescriptionId;
+       cmd.Parameters.Add(descriptionId);
+
        cmd.ExecuteNonQuery();
        _name = newName;
        _pokemonType = newPokemonType;
        _number = newNumber;
+       _descriptionId = newDescriptionId;
 
        conn.Close();
        if (conn != null)
@@ -205,29 +223,29 @@ namespace Inventory.Models
            conn.Dispose();
        }
    }
-   public void Delete()
-   {
-     MySqlConnection conn = DB.Connection();
-     conn.Open();
-
-     var cmd = conn.CreateCommand() as MySqlCommand;
-     cmd.CommandText = @"DELETE FROM items WHERE id = @thisId;";
-
-     MySqlParameter searchId = new MySqlParameter();
-     searchId.ParameterName = "@thisId";
-     searchId.Value = _id;
-     cmd.Parameters.Add(searchId);
-
-
-
-     cmd.ExecuteNonQuery();
-
-     conn.Close();
-     if (conn != null)
-     {
-       conn.Dispose();
-     }
-   }
+  //  public void Delete()
+  //  {
+  //    MySqlConnection conn = DB.Connection();
+  //    conn.Open();
+   //
+  //    var cmd = conn.CreateCommand() as MySqlCommand;
+  //    cmd.CommandText = @"DELETE FROM items WHERE id = @thisId;";
+   //
+  //    MySqlParameter searchId = new MySqlParameter();
+  //    searchId.ParameterName = "@thisId";
+  //    searchId.Value = _id;
+  //    cmd.Parameters.Add(searchId);
+   //
+   //
+   //
+  //    cmd.ExecuteNonQuery();
+   //
+  //    conn.Close();
+  //    if (conn != null)
+  //    {
+  //      conn.Dispose();
+  //    }
+  //  }
 
   }
 }
