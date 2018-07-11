@@ -7,6 +7,7 @@
     <th>Pokemon Name</th>
     <th>Type</th>
     <th>Number</th>
+    <th>Update</th>
   </tr>
   @foreach(var item in Model)
   {
@@ -14,6 +15,12 @@
     <td>@item.GetName()</td>
     <td>@item.GetPokemonType()</td>
     <td>@item.GetNumber()</td>
+    <td><a href="/items/@item.GetId()/update">Edit</a></td>
+    <td><a href="/items/@item.GetId()/delete">Delete</a></td>
+    <!-- <form action="/items/@item.GetId()/delete" method="post">
+    <button type="submit" name="button">Delete</button>
+    </form> -->
+
   </tr>
   }
 </table>

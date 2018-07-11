@@ -43,6 +43,29 @@ namespace Inventory.Controllers
 
       return View(newItem);
     }
+    [HttpGet("/items/{id}/update")]
+       public ActionResult UpdateForm(int id)
+       {
+           Item thisItem = Item.Find(id);
+           return View(thisItem);
+       }
+       [HttpPost("/items/{id}/update")]
+        public ActionResult Update(int id)
+        {
+            Item thisItem = Item.Find(id);
+            thisItem.Edit(Request.Form["updatename"], Request.Form["updateptype"], int.Parse(Request.Form["updatenumber"]));
+            return RedirectToAction("Index");
+        }
+        [HttpGet("/items/{id}/delete")]
+       public ActionResult Delete(int id)
+       {
+           Item thisItem = Item.Find(id);
+           thisItem.Delete();
+           return RedirectToAction("Index");
+       }
+
+
+
     // [HttpPost("/items/delete")]
     // public ActionResult DeleteAll()
     // {

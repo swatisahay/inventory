@@ -1,0 +1,15 @@
+<h1>New Pokemon Card</h1>
+<a href='/'>Back to Home<a/>
+<a href='/items'>Back to List<a/>
+<a href='/items/find'>Find by Id<a/>
+
+<h3>Update card:</h3>
+<form action="/items/@Model.GetId()/update" method="post">
+  <label for="updatename">Name of Pokemon:</label>
+  <input id="updatename" name="updatename" type="text" value="@Model.GetName()">
+  <label for="updateptype">Pokemon Type:</label>
+  <input id="updateptype" name="updateptype" type="text" value="@Model.GetPokemonType()">
+  <label for="updatenumber">Pokemon Number:</label>
+  <input id="updatenumber" name="updatenumber" type="text" value="@Model.GetNumber()">
+  <button type="submit">Submit</button>
+</form>

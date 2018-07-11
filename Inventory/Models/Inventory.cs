@@ -167,5 +167,67 @@ namespace Inventory.Models
       }
       return foundItem;
    }
+   public void Edit(string newName, string newPokemonType, int newNumber)
+   {
+       MySqlConnection conn = DB.Connection();
+       conn.Open();
+       var cmd = conn.CreateCommand() as MySqlCommand;
+       cmd.CommandText = @"UPDATE items SET name =@newName, pokemontype= @newPokemonType, number=@newNumber WHERE id = @searchId;";
+
+       MySqlParameter searchId = new MySqlParameter();
+       searchId.ParameterName = "@searchId";
+       searchId.Value = _id;
+       cmd.Parameters.Add(searchId);
+
+       MySqlParameter name = new MySqlParameter();
+       name.ParameterName = "@newName";
+       name.Value = newName;
+       cmd.Parameters.Add(name);
+
+       MySqlParameter pokemontype = new MySqlParameter();
+       pokemontype.ParameterName = "@newPokemonType";
+       pokemontype.Value = newPokemonType;
+       cmd.Parameters.Add(pokemontype);
+
+       MySqlParameter number = new MySqlParameter();
+       number.ParameterName = "@newNumber";
+       number.Value = newNumber;
+       cmd.Parameters.Add(number);
+
+       cmd.ExecuteNonQuery();
+       _name = newName;
+       _pokemonType = newPokemonType;
+       _number = newNumber;
+
+       conn.Close();
+       if (conn != null)
+       {
+           conn.Dispose();
+       }
+   }
+   public void Delete()
+   {
+     MySqlConnection conn = DB.Connection();
+     conn.Open();
+
+     var cmd = conn.CreateCommand() as MySqlCommand;
+     cmd.CommandText = @"DELETE FROM items WHERE id = @thisId;";
+
+     MySqlParameter searchId = new MySqlParameter();
+     searchId.ParameterName = "@thisId";
+     searchId.Value = _id;
+     cmd.Parameters.Add(searchId);
+
+
+
+     cmd.ExecuteNonQuery();
+
+     conn.Close();
+     if (conn != null)
+     {
+       conn.Dispose();
+     }
+   }
+
   }
 }
