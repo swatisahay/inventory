@@ -68,9 +68,9 @@ namespace Inventory.Models
         string itemName = rdr.GetString(1);
         string itemPokemonType = rdr.GetString(2);
         int itemNumber = rdr.GetInt32(3);
-        int descriptionNumber = rdr.GetInt32(4);
+        int ItemDescriptionId = rdr.GetInt32(4);
 
-        Item newItem = new Item(itemName, itemPokemonType, itemNumber, descriptionNumber, itemId);
+        Item newItem = new Item(itemName, itemPokemonType, itemNumber, ItemDescriptionId, itemId);
         allItems.Add(newItem);
       }
       conn.Close();
@@ -184,12 +184,14 @@ namespace Inventory.Models
        MySqlConnection conn = DB.Connection();
        conn.Open();
        var cmd = conn.CreateCommand() as MySqlCommand;
-       cmd.CommandText = @"UPDATE items SET name =@newName, pokemontype= @newPokemonType, number=@newNumber,  descriptionId=@newDescriptionId WHERE id = @searchId;";
+       cmd.CommandText = @"UPDATE items SET name =@newName, pokemontype= @newPokemonType, number=@newNumber, descriptionId=@newDescriptionId WHERE id = @searchId;";
 
        MySqlParameter searchId = new MySqlParameter();
        searchId.ParameterName = "@searchId";
        searchId.Value = _id;
        cmd.Parameters.Add(searchId);
+       cmd.CommandText = @"UPDATE items SET name =@newName, pokemontype= @newPokemonType, number=@newNumber, descriptionId=@newDescriptionId WHERE id = @searchId;";
+
 
        MySqlParameter name = new MySqlParameter();
        name.ParameterName = "@newName";
