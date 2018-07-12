@@ -24,17 +24,17 @@
 /Users/Guest/Desktop/inventory/Inventory.Tests/bin/Debug/netcoreapp1.1/InventoryTest.pdb
 /Users/Guest/Desktop/inventory/Inventory.Tests/bin/Debug/netcoreapp1.1/Inventory.dll
 /Users/Guest/Desktop/inventory/Inventory.Tests/bin/Debug/netcoreapp1.1/Inventory.pdb
-C:\Users\Swati Sahay\Desktop\inventory\Inventory.Tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
-C:\Users\Swati Sahay\Desktop\inventory\Inventory.Tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
-C:\Users\Swati Sahay\Desktop\inventory\Inventory.Tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
-C:\Users\Swati Sahay\Desktop\inventory\Inventory.Tests\bin\Debug\netcoreapp1.1\InventoryTest.deps.json
-C:\Users\Swati Sahay\Desktop\inventory\Inventory.Tests\bin\Debug\netcoreapp1.1\InventoryTest.runtimeconfig.json
-C:\Users\Swati Sahay\Desktop\inventory\Inventory.Tests\bin\Debug\netcoreapp1.1\InventoryTest.runtimeconfig.dev.json
-C:\Users\Swati Sahay\Desktop\inventory\Inventory.Tests\bin\Debug\netcoreapp1.1\InventoryTest.dll
-C:\Users\Swati Sahay\Desktop\inventory\Inventory.Tests\bin\Debug\netcoreapp1.1\InventoryTest.pdb
-C:\Users\Swati Sahay\Desktop\inventory\Inventory.Tests\bin\Debug\netcoreapp1.1\Inventory.dll
-C:\Users\Swati Sahay\Desktop\inventory\Inventory.Tests\bin\Debug\netcoreapp1.1\Inventory.pdb
-C:\Users\Swati Sahay\Desktop\inventory\Inventory.Tests\obj\Debug\netcoreapp1.1\InventoryTest.csproj.CoreCompileInputs.cache
-C:\Users\Swati Sahay\Desktop\inventory\Inventory.Tests\obj\Debug\netcoreapp1.1\InventoryTest.AssemblyInfo.cs
-C:\Users\Swati Sahay\Desktop\inventory\Inventory.Tests\obj\Debug\netcoreapp1.1\InventoryTest.dll
-C:\Users\Swati Sahay\Desktop\inventory\Inventory.Tests\obj\Debug\netcoreapp1.1\InventoryTest.pdb
+C:/Users/Swati Sahay/Desktop/inventory/Inventory.Tests/bin/Debug/netcoreapp1.1/Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:/Users/Swati Sahay/Desktop/inventory/Inventory.Tests/bin/Debug/netcoreapp1.1/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:/Users/Swati Sahay/Desktop/inventory/Inventory.Tests/bin/Debug/netcoreapp1.1/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:/Users/Swati Sahay/Desktop/inventory/Inventory.Tests/bin/Debug/netcoreapp1.1/InventoryTest.deps.json
+C:/Users/Swati Sahay/Desktop/inventory/Inventory.Tests/bin/Debug/netcoreapp1.1/InventoryTest.runtimeconfig.json
+C:/Users/Swati Sahay/Desktop/inventory/Inventory.Tests/bin/Debug/netcoreapp1.1/InventoryTest.runtimeconfig.dev.json
+C:/Users/Swati Sahay/Desktop/inventory/Inventory.Tests/bin/Debug/netcoreapp1.1/InventoryTest.dll
+C:/Users/Swati Sahay/Desktop/inventory/Inventory.Tests/bin/Debug/netcoreapp1.1/InventoryTest.pdb
+C:/Users/Swati Sahay/Desktop/inventory/Inventory.Tests/bin/Debug/netcoreapp1.1/Inventory.dll
+C:/Users/Swati Sahay/Desktop/inventory/Inventory.Tests/bin/Debug/netcoreapp1.1/Inventory.pdb
+C:/Users/Swati Sahay/Desktop/inventory/Inventory.Tests/obj/Debug/netcoreapp1.1/InventoryTest.csproj.CoreCompileInputs.cache
+C:/Users/Swati Sahay/Desktop/inventory/Inventory.Tests/obj/Debug/netcoreapp1.1/InventoryTest.AssemblyInfo.cs
+C:/Users/Swati Sahay/Desktop/inventory/Inventory.Tests/obj/Debug/netcoreapp1.1/InventoryTest.dll
+C:/Users/Swati Sahay/Desktop/inventory/Inventory.Tests/obj/Debug/netcoreapp1.1/InventoryTest.pdb

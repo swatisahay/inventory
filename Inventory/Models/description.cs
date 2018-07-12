@@ -110,6 +110,40 @@ namespace Inventory.Models
             }
             return newDescription;
         }
+        public List<Item> GetItems()
+        {
+            List<Item> allDescriptionItems = new List<Item> {};
+            MySqlConnection conn = DB.Connection();
+            conn.Open();
+            var cmd = conn.CreateCommand() as MySqlCommand;
+            cmd.CommandText = @"SELECT * FROM items WHERE descriptionId = @description_id;";
+
+            MySqlParameter descriptionId = new MySqlParameter();
+            descriptionId.ParameterName = "@description_id";
+            descriptionId.Value = this._id;
+            cmd.Parameters.Add(descriptionId);
+
+
+            var rdr = cmd.ExecuteReader() as MySqlDataReader;
+            while(rdr.Read())
+            {
+              int itemId = rdr.GetInt32(0);
+              string itemName = rdr.GetString(1);
+              string itemPokemonType = rdr.GetString(2);
+              int itemNumber = rdr.GetInt32(3);
+              int ItemDescriptionId = rdr.GetInt32(4);
+
+              Item newItem = new Item(itemName, itemPokemonType, itemNumber, ItemDescriptionId, itemId);
+              allDescriptionItems.Add(newItem);
+            }
+            conn.Close();
+            if (conn != null)
+            {
+                conn.Dispose();
+            }
+            return allDescriptionItems;
+
+        }
         public static void DeleteAll()
         {
             MySqlConnection conn = DB.Connection();

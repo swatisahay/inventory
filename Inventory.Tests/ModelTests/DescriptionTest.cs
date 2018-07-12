@@ -87,6 +87,23 @@ namespace Inventory.Tests
       Assert.AreEqual(testDescription, foundDescription);
     }
 
+    [TestMethod]
+    public void GetItems_RetrievesAllItemsWithCategory_ItemList()
+    {
+      Description testDescription = new Description("Household chores");
+      testDescription.Save();
+
+      Item firstItem = new Item("Electrode", "Electric", 101, testDescription.GetId());
+      firstItem.Save();
+      Item secondItem = new Item("Electrode", "Electric", 101, testDescription.GetId());
+      secondItem.Save();
+
+      List<Item> testItemList = new List<Item> {firstItem, secondItem};
+      List<Item> resultItemList = testDescription.GetItems();
+
+      CollectionAssert.AreEqual(testItemList, resultItemList);
+    }
+
 
   }
 }

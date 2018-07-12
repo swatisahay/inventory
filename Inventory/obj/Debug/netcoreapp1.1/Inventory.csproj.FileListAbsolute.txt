@@ -14,12 +14,12 @@
 /Users/Guest/Desktop/inventory/Inventory/obj/Debug/netcoreapp1.1/Inventory.AssemblyInfo.cs
 /Users/Guest/Desktop/inventory/Inventory/obj/Debug/netcoreapp1.1/Inventory.dll
 /Users/Guest/Desktop/inventory/Inventory/obj/Debug/netcoreapp1.1/Inventory.pdb
-C:\Users\Swati Sahay\Desktop\inventory\Inventory\bin\Debug\netcoreapp1.1\Inventory.deps.json
-C:\Users\Swati Sahay\Desktop\inventory\Inventory\bin\Debug\netcoreapp1.1\Inventory.runtimeconfig.json
-C:\Users\Swati Sahay\Desktop\inventory\Inventory\bin\Debug\netcoreapp1.1\Inventory.runtimeconfig.dev.json
-C:\Users\Swati Sahay\Desktop\inventory\Inventory\bin\Debug\netcoreapp1.1\Inventory.dll
-C:\Users\Swati Sahay\Desktop\inventory\Inventory\bin\Debug\netcoreapp1.1\Inventory.pdb
-C:\Users\Swati Sahay\Desktop\inventory\Inventory\obj\Debug\netcoreapp1.1\Inventory.csproj.CoreCompileInputs.cache
-C:\Users\Swati Sahay\Desktop\inventory\Inventory\obj\Debug\netcoreapp1.1\Inventory.AssemblyInfo.cs
-C:\Users\Swati Sahay\Desktop\inventory\Inventory\obj\Debug\netcoreapp1.1\Inventory.dll
-C:\Users\Swati Sahay\Desktop\inventory\Inventory\obj\Debug\netcoreapp1.1\Inventory.pdb
+C:/Users/Swati Sahay/Desktop/inventory/Inventory/bin/Debug/netcoreapp1.1/Inventory.deps.json
+C:/Users/Swati Sahay/Desktop/inventory/Inventory/bin/Debug/netcoreapp1.1/Inventory.runtimeconfig.json
+C:/Users/Swati Sahay/Desktop/inventory/Inventory/bin/Debug/netcoreapp1.1/Inventory.runtimeconfig.dev.json
+C:/Users/Swati Sahay/Desktop/inventory/Inventory/bin/Debug/netcoreapp1.1/Inventory.dll
+C:/Users/Swati Sahay/Desktop/inventory/Inventory/bin/Debug/netcoreapp1.1/Inventory.pdb
+C:/Users/Swati Sahay/Desktop/inventory/Inventory/obj/Debug/netcoreapp1.1/Inventory.csproj.CoreCompileInputs.cache
+C:/Users/Swati Sahay/Desktop/inventory/Inventory/obj/Debug/netcoreapp1.1/Inventory.AssemblyInfo.cs
+C:/Users/Swati Sahay/Desktop/inventory/Inventory/obj/Debug/netcoreapp1.1/Inventory.dll
+C:/Users/Swati Sahay/Desktop/inventory/Inventory/obj/Debug/netcoreapp1.1/Inventory.pdb
