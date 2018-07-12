@@ -43,7 +43,7 @@ namespace Inventory.Models
             conn.Open();
 
             var cmd = conn.CreateCommand() as MySqlCommand;
-            cmd.CommandText = @"INSERT INTO descriptions (description) VALUES (@description);";
+            cmd.CommandText = @"INSERT INTO description (description) VALUES (@description);";
 
             MySqlParameter description = new MySqlParameter();
             description.ParameterName = "@description";
@@ -65,7 +65,7 @@ namespace Inventory.Models
             MySqlConnection conn = DB.Connection();
             conn.Open();
             var cmd = conn.CreateCommand() as MySqlCommand;
-            cmd.CommandText = @"SELECT * FROM descriptions;";
+            cmd.CommandText = @"SELECT * FROM description;";
             var rdr = cmd.ExecuteReader() as MySqlDataReader;
             while(rdr.Read())
             {
@@ -86,7 +86,7 @@ namespace Inventory.Models
             MySqlConnection conn = DB.Connection();
             conn.Open();
             var cmd = conn.CreateCommand() as MySqlCommand;
-            cmd.CommandText = @"SELECT * FROM descriptions WHERE id = (@searchId);";
+            cmd.CommandText = @"SELECT * FROM description WHERE id = (@searchId);";
 
             MySqlParameter searchId = new MySqlParameter();
             searchId.ParameterName = "@searchId";
@@ -115,7 +115,7 @@ namespace Inventory.Models
             MySqlConnection conn = DB.Connection();
             conn.Open();
             var cmd = conn.CreateCommand() as MySqlCommand;
-            cmd.CommandText = @"DELETE FROM descriptions;";
+            cmd.CommandText = @"DELETE FROM description;";
             cmd.ExecuteNonQuery();
             conn.Close();
             if (conn != null)
