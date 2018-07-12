@@ -15,7 +15,7 @@ namespace Inventory.Tests
         }
         public DescriptionTests()
         {
-            DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=3306;database=inventory_test;";
+            DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=inventory_test;";
         }
 
        [TestMethod]
@@ -73,19 +73,19 @@ namespace Inventory.Tests
     }
 
 
-    // [TestMethod]
-    // public void Find_FindDescriptionInDatabase_Description()
-    // {
-    //   //Arrange
-    //   Description testDescription = new Description("Household chores");
-    //   testDescription.Save();
-    //
-    //   //Act
-    //   Description foundDescription = Description.Find(testDescription.GetId());
-    //
-    //   //Assert
-    //   Assert.AreEqual(testDescription, foundDescription);
-    // }
+    [TestMethod]
+    public void Find_FindDescriptionInDatabase_Description()
+    {
+      //Arrange
+      Description testDescription = new Description("Household chores");
+      testDescription.Save();
+
+      //Act
+      Description foundDescription = Description.Find(testDescription.GetId());
+
+      //Assert
+      Assert.AreEqual(testDescription, foundDescription);
+    }
 
 
   }

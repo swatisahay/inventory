@@ -43,7 +43,7 @@ namespace Inventory.Models
             conn.Open();
 
             var cmd = conn.CreateCommand() as MySqlCommand;
-            cmd.CommandText = @"INSERT INTO description (description) VALUES (@description);";
+            cmd.CommandText = @"INSERT INTO descriptions (description) VALUES (@description);";
 
             MySqlParameter description = new MySqlParameter();
             description.ParameterName = "@description";
@@ -65,7 +65,7 @@ namespace Inventory.Models
             MySqlConnection conn = DB.Connection();
             conn.Open();
             var cmd = conn.CreateCommand() as MySqlCommand;
-            cmd.CommandText = @"SELECT * FROM description;";
+            cmd.CommandText = @"SELECT * FROM descriptions;";
             var rdr = cmd.ExecuteReader() as MySqlDataReader;
             while(rdr.Read())
             {
@@ -81,41 +81,41 @@ namespace Inventory.Models
             }
             return allDescription;
         }
-        // public static Description Find(int id)
-        // {
-        //     MySqlConnection conn = DB.Connection();
-        //     conn.Open();
-        //     var cmd = conn.CreateCommand() as MySqlCommand;
-        //     cmd.CommandText = @"SELECT * FROM description WHERE id = (@searchId);";
-        //
-        //     MySqlParameter searchId = new MySqlParameter();
-        //     searchId.ParameterName = "@searchId";
-        //     searchId.Value = id;
-        //     cmd.Parameters.Add(searchId);
-        //
-        //     var rdr = cmd.ExecuteReader() as MySqlDataReader;
-        //     int descriptionid = 0;
-        //     string descriptiondescription = "";
-        //
-        //     while(rdr.Read())
-        //     {
-        //       descriptionid = rdr.GetInt32(0);
-        //       descriptiondescription = rdr.GetString(1);
-        //     }
-        //       Description newDescription = new Description(descriptiondescription, descriptionid);
-        //     conn.Close();
-        //     if (conn != null)
-        //     {
-        //         conn.Dispose();
-        //     }
-        //     return newDescription;
-        // }
+        public static Description Find(int id)
+        {
+            MySqlConnection conn = DB.Connection();
+            conn.Open();
+            var cmd = conn.CreateCommand() as MySqlCommand;
+            cmd.CommandText = @"SELECT * FROM descriptions WHERE id = (@searchId);";
+
+            MySqlParameter searchId = new MySqlParameter();
+            searchId.ParameterName = "@searchId";
+            searchId.Value = id;
+            cmd.Parameters.Add(searchId);
+
+            var rdr = cmd.ExecuteReader() as MySqlDataReader;
+            int descriptionid = 0;
+            string descriptiondescription = "";
+
+            while(rdr.Read())
+            {
+              descriptionid = rdr.GetInt32(0);
+              descriptiondescription = rdr.GetString(1);
+            }
+              Description newDescription = new Description(descriptiondescription, descriptionid);
+            conn.Close();
+            if (conn != null)
+            {
+                conn.Dispose();
+            }
+            return newDescription;
+        }
         public static void DeleteAll()
         {
             MySqlConnection conn = DB.Connection();
             conn.Open();
             var cmd = conn.CreateCommand() as MySqlCommand;
-            cmd.CommandText = @"DELETE FROM description;";
+            cmd.CommandText = @"DELETE FROM descriptions;";
             cmd.ExecuteNonQuery();
             conn.Close();
             if (conn != null)
