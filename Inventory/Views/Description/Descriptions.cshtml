@@ -1,0 +1,25 @@
+@using Inventory.Models;
+<h1>Collection</h1>
+<a href='/items/new'>Add a New Card<a/>
+<a href='/'>Back to Home<a/>
+<a href='/items/find'>Find by Id<a/>
+<a href='/description/new'>Add a New Type<a/>
+  <table>
+    <tr>
+      <th>Pokemon Name</th>
+      <th>Type</th>
+      <th>Number</th>
+      <th>Description_Id</th>
+
+    </tr>
+    @foreach(var item in Model.GetItems())
+    {
+    <tr>
+      <td>@item.GetName()</td>
+      <td>@item.GetPokemonType()</td>
+      <td>@item.GetNumber()</td>
+      <td>@item.GetdescriptionId()</td>
+
+    </tr>
+    }
+  </table>

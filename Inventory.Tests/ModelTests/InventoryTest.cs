@@ -66,8 +66,8 @@ namespace Inventory.Tests
       //Arrange
       // string testString1 = "test1";
       Item testItem = new Item("testString1", "Electric", 101, 1);
-      // testItem.Save();
-      Item testItem2 = new Item("testString2", "Electrode", 102, 2);
+      testItem.Save();
+      Item testItem2 = new Item("testString2", "Electrode", 102, 2, testItem.GetId());
       // testItem2.Save();
 
       //Act

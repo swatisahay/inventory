@@ -110,7 +110,7 @@ namespace Inventory.Models
             }
             return newDescription;
         }
-        public List<Item> GetItems()
+        public  List<Item> GetItems()
         {
             List<Item> allDescriptionItems = new List<Item> {};
             MySqlConnection conn = DB.Connection();

@@ -1,3 +1,5 @@
+@using Inventory.Models;
+
 <h1>New Pokemon Card</h1>
 <a href='/'>Back to Home<a/>
 <a href='/items'>Back to List<a/>
@@ -11,7 +13,12 @@
   <input id="newptype" name="newptype" type="text">
   <label for="newnumber">Pokemon Number:</label>
   <input id="newnumber" name="newnumber" type="text">
-  <label for="newdescriptionid">Description_Id:</label>
-  <input id="newdescriptionid" name="newdescriptionid" type="text">
+  <label for="newdescriptionid">Choose type:</label>
+  <select id="newdescriptionid" name="newdescriptionid">
+    @foreach(var description in Description.GetAll())
+    {
+      <option value="@description.GetId()">@description.Getdescription()</option>
+    }
+  </select>
   <button type="submit">Submit</button>
 </form>

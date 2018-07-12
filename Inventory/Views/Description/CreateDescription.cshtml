@@ -1,0 +1,14 @@
+@using Inventory.Models;
+
+<h1>New Pokemon Card</h1>
+<a href='/'>Back to Home<a/>
+<a href='/items'>Back to List<a/>
+<a href='/items/find'>Find by Id<a/>
+
+<h3>Add a Description:</h3>
+<form action="/description" method="post">
+  <label for="type">Type of Pokemon:</label>
+  <input id="type" name="type" type="text">
+
+  <button type="submit">Submit</button>
+</form>

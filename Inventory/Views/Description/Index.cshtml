@@ -1,0 +1,10 @@
+@using Inventory.Models;
+
+
+<h2>Types</h2>
+<ul>
+  @foreach(var description in Description.GetAll())
+  {
+    <li><a href="/description/@description.GetId()/items">@description.Getdescription()</a></li>
+  }
+</ul>
